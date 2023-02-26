@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane minHeight="100" minWidth="100" prefHeight="430.0" prefWidth="790.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ms.lab1.HelloController">
+
+    <TextField fx:id="t1Field" layoutX="10.0" layoutY="20.0" prefHeight="25.0" prefWidth="50.0" promptText="t1" text="7" />
+    <TextField fx:id="t2Field" layoutX="70.0" layoutY="20.0" prefHeight="25.0" prefWidth="50.0" promptText="t2" text="23" />
+    <TextField fx:id="t3Field" layoutX="130.0" layoutY="20.0" prefHeight="25.0" prefWidth="50.0" promptText="t3" text="200" />
+    <TextField fx:id="t4Field" layoutX="190.0" layoutY="20.0" prefHeight="25.0" prefWidth="50.0" promptText="t4" text="9" />
+    <TextField fx:id="t5Field" layoutX="250.0" layoutY="20.0" prefHeight="25.0" prefWidth="50.0" promptText="t5" text="9" />
+    <TextField fx:id="TField" layoutX="310.0" layoutY="20.0" prefHeight="25.0" prefWidth="50.0" promptText="T" text="5" />
+
+    <ScrollBar fx:id="speedScrollBar" layoutX="10.0" layoutY="50.0" max="10000" min="1" prefWidth="350.0" value="1" />
+    <Button fx:id="runButton" layoutX="10.0" layoutY="70.0" onAction="#runButtonClick" prefHeight="25.0" prefWidth="350.0" text="run" />
+
+    <Label fx:id="messageListLabel" layoutX="10.0" layoutY="100.0" text="Messages in storage: 0" />
+
+
+    <Label layoutX="10.0" layoutY="120.0" text="Main chanel" />
+    <Label fx:id="mainChanelStatusLabel" layoutX="100.0" layoutY="120.0" text="Status:" />
+    <ProgressBar fx:id="mainProgress" layoutX="10.0" layoutY="140.0" prefHeight="18.0" prefWidth="350.0" progress="0.0" />
+    <Label fx:id="mainChanelMessageSentLabel" layoutX="10.0" layoutY="160.0" text="Messages sent:0" />
+
+
+    <Label layoutX="10.0" layoutY="200.0" text="Backup chanel" />
+    <Label fx:id="backupChanelStatusLabel" layoutX="100.0" layoutY="200.0" text="Status:" />
+    <ProgressBar fx:id="backupProgress" layoutX="10.0" layoutY="220.0" prefHeight="18.0" prefWidth="350.0" progress="0.0" />
+    <Label fx:id="backupChanelMessageSentLabel" layoutX="10.0" layoutY="240.0" text="Messages sent:0" />
+
+    <Label fx:id="endInfoLabel" layoutX="10.0" layoutY="260.0" text="" />
+
+    <Separator layoutX="370.0" orientation="VERTICAL" prefHeight="430.0" />
+
+
+    <TableView fx:id="tableView" layoutX="385.0" layoutY="20.0" prefHeight="400.0">
+     <columns>
+       <TableColumn fx:id="timeColumn"  text="time (sec)" />
+       <TableColumn fx:id="newMessageColumn"  text="Message" />
+       <TableColumn fx:id="countMessageColumn"  text="Count of message" />
+       <TableColumn prefWidth="350" text="Chanel">
+            <columns>
+             <TableColumn fx:id="mainColumn"  text="Main" />
+             <TableColumn fx:id="mainSentColumn"  text="Sent" />
+             <TableColumn fx:id="backupColumn"  text="Backup" />
+             <TableColumn fx:id="backupSentColumn"  text="Sent" />
+            </columns>
+       </TableColumn>
+         <TableColumn fx:id="countErrorColumn" text="Errors" />
+     </columns>
+   </TableView>
+
+
+
+</Pane>
